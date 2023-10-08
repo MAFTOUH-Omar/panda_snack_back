@@ -10,12 +10,19 @@ const path = require('path');
 const cors = require('cors');
 
 
-const corsOptions = {
-    origin: '*',
-    'Access-Control-Allow-Origin' : '*'
-};
 
-app.use(cors(corsOptions));
+const corsOptions = {
+    origin: 'YOUR_FRONTEND_DOMAIN', // Replace with your frontend's actual domain
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+    optionsSuccessStatus: 204,
+    allowedHeaders: 'Content-Type,Authorization',
+  };
+  
+  app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'YOUR_FRONTEND_DOMAIN'); // Replace with your frontend's actual domain
+    cors(corsOptions)(req, res, next);
+  });
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
