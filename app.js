@@ -9,13 +9,14 @@ const fs = require('fs');
 const path = require('path');
 const cors = require('cors');
 
-
-
 const corsOptions = {
-    origin: '*'
-  };
+    origin: 'http://localhost:3000', // Replace with your frontend's actual domain
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true, // This is important for handling cookies and authorization headers
+    optionsSuccessStatus: 204, // Some legacy browsers choke on 204
+};
+app.use(cors(corsOptions));
 
-  app.use(cors(corsOptions));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
