@@ -8,11 +8,12 @@ const db = require("./config/database");
 const path = require('path');
 const cors = require('cors');
 
-// const corsOptions = {
-//     origin: '*',
-// };
+const corsOptions = {
+    origin: '*',
+    methods : '*'
+};
 
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
