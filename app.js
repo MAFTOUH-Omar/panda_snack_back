@@ -12,10 +12,6 @@ const cors = require('cors');
 
 const corsOptions = {
     origin: '*',
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true,
-    optionsSuccessStatus: 204,
-    allowedHeaders: 'Content-Type,Authorization', 
 };
 
 app.use(cors(corsOptions));
@@ -36,7 +32,8 @@ app.get('/' , (req,res)=>{
     res.send('All Oki')
 })
 
-app.use('/meal_picture/', express.static('Picture/meal_picture'));
+// app.use('/meal_picture/', express.static('Picture/meal_picture'));
+app.use("/meal_picture/", express.static(path.join(__dirname, "Picture/meal_picture")));
 
 db.connect();
 app.listen(process.env.APP_PORT);
