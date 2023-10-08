@@ -12,6 +12,7 @@ const cors = require('cors');
 
 const corsOptions = {
     origin: '*',
+    methods: '*',
 };
 
 app.use(cors(corsOptions));
