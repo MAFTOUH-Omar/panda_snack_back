@@ -20,7 +20,7 @@ const corsOptions = {
   };
   
   app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'YOUR_FRONTEND_DOMAIN'); // Replace with your frontend's actual domain
+    res.header('Access-Control-Allow-Origin', '*'); // Replace with your frontend's actual domain
     cors(corsOptions)(req, res, next);
   });
 
