@@ -12,17 +12,13 @@ const cors = require('cors');
 
 
 const corsOptions = {
-    origin: '*', // Replace with your frontend's actual domain
+    origin: 'http://localhost:3000',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
     optionsSuccessStatus: 204,
-    allowedHeaders: 'Content-Type,Authorization',
   };
-  
-  app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*'); // Replace with your frontend's actual domain
-    cors(corsOptions)(req, res, next);
-  });
+
+  app.use(cors(corsOptions));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
