@@ -17,6 +17,13 @@ const verifyToken = (roles) => async (req, res, next) => {
       config.TOKEN_KEY
     );
 
+    // Set CORS headers to allow requests from any origin
+    res.setHeader("Access-Control-Allow-Origin", "*");
+
+    // Other CORS headers (optional)
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+
     // Vérifier si l'utilisateur a le rôle requis
     if (roles && roles.length > 0 && !roles.includes(decoded.role)) {
       return res.status(403).send("Unauthorized role");
