@@ -9,10 +9,7 @@ const path = require('path');
 const cors = require('cors');
 
 const corsOptions = {
-    origin: 'http://127.0.0.1:3000', // Replace with your frontend's actual domain
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true, // This is important for handling cookies and authorization headers
-    optionsSuccessStatus: 204, // Some legacy browsers choke on 204
+    origin: '*',
 };
 
 app.use(cors(corsOptions));
