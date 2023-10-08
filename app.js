@@ -12,7 +12,7 @@ const cors = require('cors');
 
 
 const corsOptions = {
-    origin: 'YOUR_FRONTEND_DOMAIN', // Replace with your frontend's actual domain
+    origin: '*', // Replace with your frontend's actual domain
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
     optionsSuccessStatus: 204,
