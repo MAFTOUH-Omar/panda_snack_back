@@ -9,7 +9,12 @@ const fs = require('fs');
 const path = require('path');
 const cors = require('cors');
 
-app.use(cors());
+
+const corsOptions = {
+    origin: '*',
+};
+
+app.use(cors(corsOptions));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
