@@ -11,7 +11,7 @@ const cors = require('cors');
 const cors = require('cors');
 
 const corsOptions = {
-  origin:  [ 'http://localhost:3000', 'https://panda-snack.vercel.app' ] ,
+  origins:  [ 'http://localhost:3000', 'https://panda-snack.vercel.app' ] ,
   methods: ['GET,HEAD,PUT,PATCH,POST,DELETE']
 };
 
