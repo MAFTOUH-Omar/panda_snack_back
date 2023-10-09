@@ -6,9 +6,9 @@ const MealRoute = require('./routes/meal.routes');
 const OrderRoute = require('./routes/order.routes');
 const db = require("./config/database");
 const path = require('path');
+const cors = require('cors');
 
-
-app.use(require("cors")());
+app.use(cors());
 
 
 app.use(express.json());
