@@ -8,6 +8,14 @@ const db = require("./config/database");
 const path = require('path');
 const cors = require('cors');
 
+const cors = require('cors');
+
+const corsOptions = {
+  origin:  [ 'http://localhost:3000', 'https://panda-snack.vercel.app' ] ,
+  methods: ['GET,HEAD,PUT,PATCH,POST,DELETE']
+};
+
+app.use(cors(corsOptions));
 
 
 
@@ -30,7 +38,6 @@ app.get('/', (req, res) => {
 
 // Serve static meal pictures
 app.use("/meal_picture/", express.static(path.join(__dirname, "Picture/meal_picture")));
-app.use(cors());
 
 db.connect();
 app.listen(process.env.APP_PORT, () => {
