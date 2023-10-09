@@ -8,7 +8,7 @@ const db = require("./config/database");
 const path = require('path');
 const cors = require('cors');
 
-app.use(cors());
+
 
 
 app.use(express.json());
@@ -30,6 +30,7 @@ app.get('/', (req, res) => {
 
 // Serve static meal pictures
 app.use("/meal_picture/", express.static(path.join(__dirname, "Picture/meal_picture")));
+app.use(cors());
 
 db.connect();
 app.listen(process.env.APP_PORT, () => {
