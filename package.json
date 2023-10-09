@@ -1,6 +1,7 @@
 {
   "name": "panda_snack_server",
   "version": "1.0.0",
+  "proxy": "https://panda-snack.vercel.app",
   "description": "",
   "main": "index.js",
   "scripts": {
